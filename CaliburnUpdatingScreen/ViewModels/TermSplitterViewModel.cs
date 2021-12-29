@@ -73,12 +73,26 @@ namespace CaliburnUpdatingScreen.ViewModels
 
             StringBuilder outputCombined = new StringBuilder();
 
-            var query = from elem1 in firstGroupTermsList from elem2 in secGroupTermsList from elem3 in thirdGroupTermsList from elem4 in fourthGroupTermsList select string.Join(" ", elem1, operandListArray[0], elem2, operandListArray[1], elem3, operandListArray[2], elem4);
+            //var query = from elem1 in firstGroupTermsList from elem2 in secGroupTermsList from elem3 in thirdGroupTermsList from elem4 in fourthGroupTermsList select string.Join(" ", elem1, operandListArray[0], elem2, operandListArray[1], elem3, operandListArray[2], elem4);
 
-            foreach (var element in query)
+            foreach (var item in firstGroupTermsList)
             {
-                outputCombined.Append(element + Environment.NewLine);
+                foreach (var item1 in secGroupTermsList)
+                {
+                    foreach (var item2 in thirdGroupTermsList)
+                    {
+                        foreach (var item3 in fourthGroupTermsList)
+                        {
+                            outputCombined.Append(item + $" {operandListArray[0]} " + item1 + $" {operandListArray[1]} " + item2 + $" {operandListArray[2]} " + item3 + Environment.NewLine);
+                        }
+                    }
+                }
             }
+
+            //foreach (var element in query)
+            //{
+            //    outputCombined.Append(element + Environment.NewLine);
+            //}
 
             strGroupOutPut = outputCombined.ToString();
 
