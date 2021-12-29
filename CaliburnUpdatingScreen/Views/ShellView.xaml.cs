@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CaliburnUpdatingScreen.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,13 @@ namespace CaliburnUpdatingScreen.Views
         public ShellView()
         {
             InitializeComponent();
+
+            this.MouseLeftButtonDown += delegate { this.DragMove(); };
+
+            ShellViewModel vm = new ShellViewModel();
+            this.DataContext = vm;
+            if (ShellViewModel.CloseAction == null)
+                ShellViewModel.CloseAction = new Action(this.Close);
         }
     }
 }

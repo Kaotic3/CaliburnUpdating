@@ -134,86 +134,24 @@ namespace CaliburnUpdatingScreen.ViewModels
         }
         public void btnAsyncBaash()
         {
-            var firstGroupTerms = strGroupOne;
-            var secGroupTerms = strGroupTwo;
-            var operandList = strGroupOperand;
+            string[] firstGroupTermsList = new string[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday ", "Saturday", "Sunday", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "Red", "Blue", "Orange", "Green", "Gray", "Black", "Purple", "Brown", "Pink", "White", "Yellow", "Rust", "Acoustic", "Electric", "Nylon", "Steel", "Leather ", "Wood ", "Rubber" };
+            string[] secGroupTermsList = new string[] { "RAM", "CPU", "GPU", "PSU", "SSD", "Harddrive", "USB", "Audio", "Graphics", "Memory", "PCIE", "Power ", "Light", "RGB", "Thermo", "Paste", "Cable", "Desk", "Chair", "Keyboard", "Mouse", "Fan", "Sofa", "Lounge", "Coffee", "Tea", "Bread", "Milk", "Pizza", "Sausage ", "Chicken", "Pineapple", "Apple", "Banana", "Sugar", "Butter", "Margarine", "Cooker", "Microwave", "Picture", "Camera", "Violin ", "Guitar", "Drum", "String", "Shelf", "Fireplace", "Monitor", "Speakers", "XLR" };
+            string[] thirdGroupTermsList = new string[] { "success", "perform", "won", "rate", "dominate" };
+            string[] fourthGroupTermsList = new string[] { "UK", "United Kingdom", "England", "Scotland", "Wales", "Northern Ireland", "NI", "Europe", "EEA", "European Economic Area", "EU", "European Union", "Turkey", "Ukraine", "Switzerland" };
+            string[] operandListArray = new string[] { "AND", "AND", "AND" };
 
-            if (firstGroupTerms == "" || firstGroupTerms == null)
-            {
-                return;
-            }
-            if (secGroupTerms == "" || secGroupTerms == null)
-            {
-                return;
-            }
-
-            var firstGroupTermsList = strGroupOne.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).ToList();
-            var secGroupTermsList = strGroupTwo.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).ToList();
-            List<string> thirdGroupTermsList = new List<string>();
-            List<string> fourthGroupTermsList = new List<string>();
-            if (strGroupThree != "" && strGroupThree != null)
-            {
-                thirdGroupTermsList = strGroupThree.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).ToList();
-            }
-            if (strGroupFour != "" && strGroupFour != null)
-            {
-                fourthGroupTermsList = strGroupFour.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).ToList();
-            }
-            var operandListArray = operandList.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).ToList();
             StringBuilder outputCombined = new StringBuilder();
-            if (fourthGroupTermsList.Count() > 0)
-            {
-                var query = from elem1 in firstGroupTermsList from elem2 in secGroupTermsList from elem3 in thirdGroupTermsList from elem4 in fourthGroupTermsList select string.Join(" ", elem1, operandListArray[0], elem2, operandListArray[1], elem3, operandListArray[2], elem4);
 
-                foreach (var element in query)
-                {
-                    outputCombined.Append(element + Environment.NewLine);
-                }
-            }
-            else if (thirdGroupTermsList.Count() > 0)
-            {
-                var query2 = from elem1 in firstGroupTermsList from elem2 in secGroupTermsList from elem3 in thirdGroupTermsList select string.Join(" ", elem1, operandListArray[0], elem2, operandListArray[1], elem3);
+            var query = from elem1 in firstGroupTermsList from elem2 in secGroupTermsList from elem3 in thirdGroupTermsList from elem4 in fourthGroupTermsList select string.Join(" ", elem1, operandListArray[0], elem2, operandListArray[1], elem3, operandListArray[2], elem4);
 
-                foreach (var element2 in query2)
-                {
-                    outputCombined.Append(element2 + Environment.NewLine);
-                }
-            }
-            else
+            foreach (var element in query)
             {
-                var query3 = from elem1 in firstGroupTermsList from elem2 in secGroupTermsList select string.Join(" ", elem1, operandListArray[0], elem2);
-                foreach (var element3 in query3)
-                {
-                    outputCombined.Append(element3 + Environment.NewLine);
-                }
+                outputCombined.Append(element + Environment.NewLine);
             }
 
-            var result = outputCombined.ToString().Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
-
-            if (result.Length > 10000)
-            {
-                allOutput = outputCombined.ToString();
-                outputCombined.Clear();
-
-                outputCombined.Append("THIS IS A SAMPLE - CREATE TEXT FILE FOR FULL SET!" + Environment.NewLine + Environment.NewLine);
-
-                for (int i = 0; i < 100; i++)
-                {
-                    outputCombined.Append(result[i] + Environment.NewLine);
-                }
-                strGroupOutPut = outputCombined.ToString();
-            }
-            else
-            {
-                strGroupOutPut = outputCombined.ToString();
-            }
+            strGroupOutPut = outputCombined.ToString();
 
             outputCombined.Clear();
-            firstGroupTermsList.Clear();
-            secGroupTermsList.Clear();
-            thirdGroupTermsList.Clear();
-            fourthGroupTermsList.Clear();
-            operandListArray.Clear();
         }
         public void btnReset()
         {
