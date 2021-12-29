@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="CaliburnUpdatingScreen.Views.TermSplitterView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CaliburnUpdatingScreen.Views"
+             mc:Ignorable="d" Background="#292C33"
+             d:DesignHeight="790" d:DesignWidth="800" MinHeight="840">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Enter Text Here" Foreground="White" Grid.Row="0" Grid.Column="0" FontStyle="Italic" VerticalAlignment="Bottom"  FontSize="14" HorizontalAlignment="Center" TextAlignment="Center" Margin="10"/>
+        <TextBox x:Name="strGroupOne" TextWrapping="Wrap" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" AcceptsReturn="True" Margin="10" MinWidth="100" HorizontalAlignment="Center" MinHeight="520" VerticalAlignment="Bottom" MaxHeight="520" FontSize="12"/>
+        <TextBox x:Name="strGroupTwo" TextWrapping="Wrap" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="1" AcceptsReturn="True" Margin="10" MinWidth="100" HorizontalAlignment="Center" MinHeight="520" VerticalAlignment="Bottom" MaxHeight="520" FontSize="12"/>
+        <TextBox x:Name="strGroupThree" TextWrapping="Wrap" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="1" AcceptsReturn="True" Margin="10" MinWidth="100" HorizontalAlignment="Center" MinHeight="520" VerticalAlignment="Bottom" MaxHeight="520" FontSize="12"/>
+        <TextBox x:Name="strGroupFour" TextWrapping="Wrap" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="1" AcceptsReturn="True" Margin="10" MinWidth="100" HorizontalAlignment="Center" MinHeight="520" VerticalAlignment="Bottom" MaxHeight="520" FontSize="12"/>
+        <TextBox x:Name="strGroupOutPut" TextWrapping="Wrap" Grid.Row="2" Grid.Column="5" Grid.ColumnSpan="1" AcceptsReturn="True" Margin="10" MinWidth="100" HorizontalAlignment="Center" MinHeight="520" VerticalAlignment="Bottom" MaxHeight="520" FontSize="12"/>
+        <TextBox x:Name="strGroupOperand" TextWrapping="Wrap" Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="1" AcceptsReturn="True" Margin="10" MinWidth="100" HorizontalAlignment="Center" MinHeight="520" VerticalAlignment="Bottom" MaxHeight="520" FontSize="12"/>
+        <Button x:Name="btnAsyncBaash" Grid.Row="4" FontSize="14" Grid.Column="1" Margin="30" Content="Bash Terms" HorizontalAlignment="Center" MinWidth="50" Background="DarkRed" Foreground="#C9CCC7" Cursor="Hand" Grid.ColumnSpan="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock Text="TERM JOINER" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" FontStyle="Italic" VerticalAlignment="Top" Foreground="White" FontSize="14" HorizontalAlignment="Center" TextAlignment="Center" Margin="10"/>
+        <TextBlock Text="Group:" Grid.Row="1" Grid.Column="0" FontStyle="Italic" VerticalAlignment="Center" Foreground="White" FontSize="14" HorizontalAlignment="Left" TextAlignment="Center" Margin="10"/>
+        <TextBox x:Name="tbSelectedGroup" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" MinWidth="100" Margin="15" Visibility="Hidden"/>
+        <Label Content="GROUP ONE" Grid.Row="1" Grid.Column="1" FontStyle="Italic" VerticalAlignment="Center" Foreground="White" FontSize="13" HorizontalAlignment="Center" Margin="10" MinHeight="20" MinWidth="50"/>
+        <Label Content="GROUP TWO" Grid.Row="1" Grid.Column="2" FontStyle="Italic" VerticalAlignment="Center" Foreground="White" FontSize="13" HorizontalAlignment="Center" Margin="10" MinHeight="20" MinWidth="50"/>
+        <Label Content="GROUP THREE" Grid.Row="1" Grid.Column="3" FontStyle="Italic" VerticalAlignment="Center" Foreground="White" FontSize="13" HorizontalAlignment="Center" Margin="10" MinHeight="20" MinWidth="50"/>
+        <Label Content="GROUP FOUR" Grid.Row="1" Grid.Column="4" FontStyle="Italic" VerticalAlignment="Center" Foreground="White" FontSize="13" HorizontalAlignment="Center" Margin="10" MinHeight="20" MinWidth="50"/>
+        <Button x:Name="btnOutPut" Grid.Row="1" Grid.Column="5" FontStyle="Italic" VerticalAlignment="Bottom" Foreground="White" FontSize="14" HorizontalAlignment="Center" Margin="10" MinHeight="20" MinWidth="50" Content="OUTPUT" Background="DarkSlateBlue" />
+        <Button x:Name="btnOperand" Grid.Row="1" Grid.Column="6" FontStyle="Italic" VerticalAlignment="Bottom" Foreground="White" FontSize="14" HorizontalAlignment="Center" Margin="10" MinHeight="20" MinWidth="50" Content="OPERATORS" Background="DarkSlateBlue"/>
+        <ProgressBar Value="{Binding CurrentProgress, Mode=Oneway}" DockPanel.Dock="Bottom" Height="18" Name="progressBar" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5" Margin="100,0,100,0"/>
+        <TextBlock Text="{Binding ResultBar, Mode=Oneway}" Foreground="Black" FontSize="14" HorizontalAlignment="Center" TextAlignment="Center" Height="18" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5" Margin="100,0,100,0"/>
+        <Button x:Name="btnReset" Grid.Row="4" Grid.Column="3" FontSize="16" Margin="30" Content="Reset" HorizontalAlignment="Center" MinWidth="50" Background="DarkGoldenrod" Foreground="#C9CCC7" Cursor="Hand" Grid.ColumnSpan="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</UserControl>
