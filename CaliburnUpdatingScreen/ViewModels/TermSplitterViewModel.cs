@@ -134,9 +134,9 @@ namespace CaliburnUpdatingScreen.ViewModels
         }
         public void btnAsyncBaash()
         {
-            string[] firstGroupTermsList = new string[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday ", "Saturday", "Sunday", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "Red", "Blue", "Orange", "Green", "Gray", "Black", "Purple", "Brown", "Pink", "White", "Yellow", "Rust", "Acoustic", "Electric", "Nylon", "Steel", "Leather ", "Wood ", "Rubber" };
+            string[] firstGroupTermsList = new string[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday ", "Saturday", "Sunday", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "Red", "Blue", "Orange", "Green", "Gray", "Black", "Purple", "Brown", "Pink", "White", "Yellow", "Rust", "Acoustic", "Electric", "Nylon", "Steel", "Leather", "Wood", "Rubber" };
             string[] secGroupTermsList = new string[] { "RAM", "CPU", "GPU", "PSU", "SSD", "Harddrive", "USB", "Audio", "Graphics", "Memory", "PCIE", "Power ", "Light", "RGB", "Thermo", "Paste", "Cable", "Desk", "Chair", "Keyboard", "Mouse", "Fan", "Sofa", "Lounge", "Coffee", "Tea", "Bread", "Milk", "Pizza", "Sausage ", "Chicken", "Pineapple", "Apple", "Banana", "Sugar", "Butter", "Margarine", "Cooker", "Microwave", "Picture", "Camera", "Violin ", "Guitar", "Drum", "String", "Shelf", "Fireplace", "Monitor", "Speakers", "XLR" };
-            string[] thirdGroupTermsList = new string[] { "success", "perform", "won", "rate", "dominate" };
+            string[] thirdGroupTermsList = new string[] { "success", "perform", "won", "rate", "dominate", "range", "try" };
             string[] fourthGroupTermsList = new string[] { "UK", "United Kingdom", "England", "Scotland", "Wales", "Northern Ireland", "NI", "Europe", "EEA", "European Economic Area", "EU", "European Union", "Turkey", "Ukraine", "Switzerland" };
             string[] operandListArray = new string[] { "AND", "AND", "AND" };
 
@@ -155,14 +155,7 @@ namespace CaliburnUpdatingScreen.ViewModels
         }
         public void btnReset()
         {
-            tbSelectedGroup = "";
-            strGroupOne = "";
-            strGroupTwo = "";
-            strGroupThree = "";
-            strGroupFour = "";
-            strNamesIn = "";
             strGroupOutPut = "";
-            strGroupOperand = "";
 
             CurrentProgress = 0;
             ResultBar = 0 + "%";
