@@ -28,14 +28,14 @@
         <TextBlock Text="Enter Text Here" Foreground="White" Grid.Row="0" Grid.Column="0" FontStyle="Italic" VerticalAlignment="Bottom"  FontSize="14" HorizontalAlignment="Center" TextAlignment="Center" Margin="10"/>
        
         <TextBox x:Name="strGroupOutPut" TextWrapping="Wrap" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" AcceptsReturn="True" Margin="10" MinWidth="600" HorizontalAlignment="Center" MinHeight="520" VerticalAlignment="Bottom" MaxHeight="520" FontSize="12"/>
-        <Button x:Name="btnAsyncBaash" Grid.Row="4" FontSize="14" Grid.Column="1" Margin="30" Content="Bash Terms" HorizontalAlignment="Center" MinWidth="50" Background="DarkRed" Foreground="#C9CCC7" Cursor="Hand" Grid.ColumnSpan="2">
+        <Button x:Name="btnAsyncBaash" Grid.Row="4" FontSize="14" Grid.Column="1" Margin="30" Content="Join Words" HorizontalAlignment="Center" MinWidth="50" Background="DarkRed" Foreground="#C9CCC7" Cursor="Hand" Grid.ColumnSpan="2">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <TextBlock Text="TERM JOINER" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" FontStyle="Italic" VerticalAlignment="Top" Foreground="White" FontSize="14" HorizontalAlignment="Center" TextAlignment="Center" Margin="10"/>
+        <TextBlock Text="WORD JOINER" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" FontStyle="Italic" VerticalAlignment="Top" Foreground="White" FontSize="14" HorizontalAlignment="Center" TextAlignment="Center" Margin="10"/>
         <TextBlock Text="Group:" Grid.Row="1" Grid.Column="0" FontStyle="Italic" VerticalAlignment="Center" Foreground="White" FontSize="14" HorizontalAlignment="Left" TextAlignment="Center" Margin="10"/>
         <TextBox x:Name="tbSelectedGroup" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" MinWidth="100" Margin="15" Visibility="Hidden"/>
         <Label Content="OUTPUT" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="1" FontStyle="Italic" VerticalAlignment="Center" Foreground="White" FontSize="13" HorizontalAlignment="Center" Margin="10" MinHeight="20" MinWidth="50"/>
