@@ -34,16 +34,7 @@ namespace CaliburnUpdatingScreen.ViewModels
                 NotifyOfPropertyChange(() => CurrentProgress);
             }
         }
-        private string _strNamesIn;
-        public string strNamesIn
-        {
-            get { return _strNamesIn; }
-            set
-            {
-                _strNamesIn = value;
-                NotifyOfPropertyChange(() => strNamesIn);
-            }
-        }
+        
         private string _strGroupOutPut;
         public string strGroupOutPut
         {
@@ -52,66 +43,6 @@ namespace CaliburnUpdatingScreen.ViewModels
             {
                 _strGroupOutPut = value;
                 NotifyOfPropertyChange(() => strGroupOutPut);
-            }
-        }
-        private string _strGroupOne;
-        public string strGroupOne
-        {
-            get { return _strGroupOne; }
-            set
-            {
-                _strGroupOne = value;
-                NotifyOfPropertyChange(() => strGroupOne);
-            }
-        }
-        private string _strGroupTwo;
-        public string strGroupTwo
-        {
-            get { return _strGroupTwo; }
-            set
-            {
-                _strGroupTwo = value;
-                NotifyOfPropertyChange(() => strGroupTwo);
-            }
-        }
-        private string _strGroupThree;
-        public string strGroupThree
-        {
-            get { return _strGroupThree; }
-            set
-            {
-                _strGroupThree = value;
-                NotifyOfPropertyChange(() => strGroupThree);
-            }
-        }
-        private string _strGroupFour;
-        public string strGroupFour
-        {
-            get { return _strGroupFour; }
-            set
-            {
-                _strGroupFour = value;
-                NotifyOfPropertyChange(() => strGroupFour);
-            }
-        }
-        private string _strGroupOperand;
-        public string strGroupOperand
-        {
-            get { return _strGroupOperand; }
-            set
-            {
-                _strGroupOperand = value;
-                NotifyOfPropertyChange(() => strGroupOperand);
-            }
-        }
-        private string _tbSelectedGroup;
-        public string tbSelectedGroup
-        {
-            get { return _tbSelectedGroup; }
-            set
-            {
-                _tbSelectedGroup = value;
-                NotifyOfPropertyChange(() => tbSelectedGroup);
             }
         }
         #endregion
